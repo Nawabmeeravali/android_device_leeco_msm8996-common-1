@@ -115,8 +115,6 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    get_snd_dev_names \
-    acdb_extract \
     libvolumelistener \
     tinymix
 
@@ -323,16 +321,16 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    ipacm \
-    ipacm-diag \
-    IPACM_cfg.xml \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf \
-    hs20-osu-client 
+    WCNSS_wlan_dictionary.dat
+#    ipacm \
+#    ipacm-diag \
+#    IPACM_cfg.xml \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
