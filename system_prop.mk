@@ -13,7 +13,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     mm.enable.smoothstreaming=true \
     mm.enable.qcom_parser=4194303 \
-    persist.mm.enable.prefetch=true
+    persist.mm.enable.prefetch=true \
+    persist.media.treble_omx=false
 
 # Additional i/p buffer in case of encoder DCVS
 PRODUCT_PROPERTY_OVERRIDES += \
