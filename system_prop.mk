@@ -85,6 +85,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.disable.pq=true \
     persist.camera.llnoise=1
 
+# Charger
+ro.enable_boot_charger_mode=1 
+
 # Display power reduction (FOSS)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qcom.dpps.sensortype=3 \
