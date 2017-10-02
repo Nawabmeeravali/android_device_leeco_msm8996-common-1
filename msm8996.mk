@@ -130,6 +130,9 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    Snap \
+    android.hardware.camera.provider@2.4-service \
+    camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     camera.msm8996 \
     libshims_camera \
@@ -347,4 +350,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
+<<<<<<< HEAD
 $(call inherit-product, vendor/leeco/msm8996-common/msm8996-common-vendor.mk)
+=======
+# Model is set via init library
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
+    ro.product.model
+
+$(call inherit-product-if-exists, vendor/leeco/msm8996-common/msm8996-common-vendor.mk)
+>>>>>>> daea755... Add camera service
