@@ -1,6 +1,9 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+<<<<<<< HEAD
  * Copyright (C) 2017 The LineageOS Project
+=======
+>>>>>>> 3996454... Fix camera shim names etc
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +18,7 @@
  * limitations under the License.
  */
 
+<<<<<<< HEAD
 #include <string>
 
 #include <utils/Errors.h>
@@ -30,6 +34,19 @@
 #include <private/gui/BitTube.h>
 
 const char *_ZN7android18gClientPackageNameE;
+=======
+const char *_ZN7android18gClientPackageNameE;
+const char *_ZN7android16CameraParameters19CLIENT_PACKAGE_NAMEE = "client-package-name";
+const char *_ZN7android16CameraParameters31KEY_SUPPORTED_VIDEO_SIZES_60FPSE = "support-60fps-video-sizes";
+void _ZN7android20DisplayEventReceiverC1Ev() {}
+
+// needed by libFNVfbEngineHAL.so
+void _ZN7android13GraphicBuffer10reallocateEjjij() {}
+
+#include <string>
+
+#include <ui/GraphicBuffer.h>
+>>>>>>> 3996454... Fix camera shim names etc
 
 extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
         const native_handle_t* handle,
@@ -56,6 +73,7 @@ extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb(
         inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
 }
 
+<<<<<<< HEAD
 namespace android {
 
 DisplayEventReceiver::DisplayEventReceiver() {
@@ -71,3 +89,10 @@ DisplayEventReceiver::DisplayEventReceiver() {
 }
 
 }; // namespace android
+=======
+extern "C" void _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE();
+
+extern "C" void _ZN7android20DisplayEventReceiverC1Ev() {
+    _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE;
+}
+>>>>>>> 3996454... Fix camera shim names etc
