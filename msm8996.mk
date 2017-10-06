@@ -176,10 +176,10 @@ PRODUCT_PACKAGES += \
 #    Doze
 
 # DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service.widevine
+
+#PRODUCT_PACKAGES += \
+#    android.hardware.drm@1.0-service \
+#    android.hardware.drm@1.0-impl
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
