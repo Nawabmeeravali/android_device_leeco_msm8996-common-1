@@ -133,11 +133,13 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
-    camera.msm8996 \
-    libshims_camera \
-    libshims_qcamera-daemon \
-    Snap
-#    vendor.qti.hardware.camera.device@1.0 \
+    android.hardware.camera.provider@2.4-service \
+    libstlport
+
+# Shims
+PRODUCT_PACKAGES += \
+    libcamera_shim \
+    qcamera-daemon_shim
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -275,7 +277,7 @@ PRODUCT_PACKAGES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson 
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
