@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl.legacy \
+    android.hardware.camera.provider@2.4-impl \
     vendor.qti.hardware.camera.device@1.0
 
 # Shims
@@ -198,9 +198,9 @@ PRODUCT_PACKAGES += \
 #    Doze
 
 # DRM
-#PRODUCT_PACKAGES += \
-#    android.hardware.drm@1.0-service \
-#    android.hardware.drm@1.0-impl
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-impl
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
