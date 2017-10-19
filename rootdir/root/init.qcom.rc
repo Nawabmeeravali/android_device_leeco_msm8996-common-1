@@ -369,6 +369,7 @@ on post-fs-data
 
     # Create directory used for camera
     mkdir /data/vendor/camera 0770 camera camera
+    mkdir /data/system/camera 0770 camera camera
 
     # Create directories for Fingerprint
     mkdir /data/vendor/misc/qti_fp 0770 system system
@@ -543,7 +544,7 @@ on property:sys.boot_completed=1
 # start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
-    user camera
+    user root 
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
 
