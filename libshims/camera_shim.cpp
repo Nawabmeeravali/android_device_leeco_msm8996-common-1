@@ -1,9 +1,5 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
-<<<<<<< HEAD
- * Copyright (C) 2017 The LineageOS Project
-=======
->>>>>>> 3996454... Fix camera shim names etc
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +14,8 @@
  * limitations under the License.
  */
 
-#include <string>
-
-#include <ui/GraphicBuffer.h>
-
 const char *_ZN7android18gClientPackageNameE;
+/*<<<<<<< HEAD
 const char *_ZN7android16CameraParameters19CLIENT_PACKAGE_NAMEE = "client-package-name";
 const char *_ZN7android16CameraParameters31KEY_SUPPORTED_VIDEO_SIZES_60FPSE = "support-60fps-video-sizes";
 void _ZN7android20DisplayEventReceiverC1Ev() {}
@@ -60,3 +53,5 @@ extern "C" void _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11Vsync
 extern "C" void _ZN7android20DisplayEventReceiverC1Ev() {
     _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE;
 }
+=======
+>>>>>>> a5765fd... Only use camera_shim since hexedited blobs are in use*/
