@@ -1,6 +1,12 @@
 [AID_QTI_DIAG]
 value:2901
 
+[system/bin/qmuxd]
+mode: 0700
+user: AID_RADIO
+group: AID_SHELL
+caps: BLOCK_SUSPEND
+
 [system/bin/cnss-daemon]
 mode: 0755
 user: AID_SYSTEM
