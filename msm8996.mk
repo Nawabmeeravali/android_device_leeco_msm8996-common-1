@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    audiod \
     audio.a2dp.default \
     audio.primary.msm8996 \
     audio.r_submix.default \
@@ -134,7 +133,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     vendor.qti.hardware.camera.device@1.0 \
-    libshims_camera
+    libshim_camera
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -166,6 +165,9 @@ PRODUCT_COPY_FILES += \
 # Display calibration
 PRODUCT_PACKAGES += \
     libjni_livedisplay
+
+PRODUCT_PACKAGES += \
+    libstlport
 
 # Doze mode
 #PRODUCT_PACKAGES += \
@@ -346,12 +348,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-<<<<<<< HEAD
-$(call inherit-product, vendor/leeco/msm8996-common/msm8996-common-vendor.mk)
-=======
 # Model is set via init library
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
     ro.product.model
 
 $(call inherit-product-if-exists, vendor/leeco/msm8996-common/msm8996-common-vendor.mk)
->>>>>>> daea755... Add camera service
