@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,11 @@
  * limitations under the License.
  */
 
-const char *_ZN7android18gClientPackageNameE;
-const char *_ZN7android16CameraParameters19CLIENT_PACKAGE_NAMEE = "client-package-name";
-const char *_ZN7android16CameraParameters31KEY_SUPPORTED_VIDEO_SIZES_60FPSE = "support-60fps-video-sizes";
-
 #include <string>
 
 #include <ui/GraphicBuffer.h>
+
+const char *_ZN7android18gClientPackageNameE;
 
 extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
         const native_handle_t* handle,

@@ -20,6 +20,12 @@ LOCAL_SRC_FILES := \
     camera_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := \
+    libui \
+    libbase \
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0 \
+    liblog \
+    libutils \
     libgui \
     libui
 
