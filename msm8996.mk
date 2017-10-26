@@ -154,7 +154,6 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
-    vendor.qti.hardware.camera.device@1.0 \
     libshim_camera
 
 # Connectivity Engine support (CNE)
