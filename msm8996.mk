@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-impl-legacy \
     libshim_camera
 
 # Connectivity Engine support (CNE)
@@ -201,10 +201,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-impl \
-    fingerprintd \
-    fingerprint.msm8996
-
+    android.hardware.biometrics.fingerprint@2.0-service
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
