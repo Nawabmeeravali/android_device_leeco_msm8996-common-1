@@ -81,7 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.camera.imglib.fddsp=1 \
     persist.camera.llc=1 \
-    persist.camera.llnoise=1 \
+    persist.camera.llnoise=1
 
 # Display power reduction (FOSS)
 PRODUCT_PROPERTY_OVERRIDES += \
