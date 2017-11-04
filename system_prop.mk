@@ -110,7 +110,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
-    debug.gralloc.enable_fb_ubwc=1 \
+    debug.gralloc.enable_fb_ubwc=0 \
+    debug.gralloc.gfx_ubwc_disable \
     persist.camera.preview.ubwc=0 \
     persist.camera.video.ubwc=0 \
     dev.pm.dyn_samplingrate=1 \
