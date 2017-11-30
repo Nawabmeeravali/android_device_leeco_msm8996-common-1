@@ -132,14 +132,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qcom.ad=1 \
     ro.qcom.ad.sensortype=3
 
-# Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.am.reschedule_service=true \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.min_freq_0=307200 \
-    ro.min_freq_4=307200 \
-    ro.sys.fw.bg_apps_limit=60
-
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst="/dev/block/bootdevice/by-name/frp" \
