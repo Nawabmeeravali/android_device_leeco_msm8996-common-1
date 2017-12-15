@@ -29,17 +29,7 @@ TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
 
 # Use Snapdragon LLVM, if available
-#TARGET_USE_SDCLANG := true
-
-#ifneq ($(HOST_OS),darwin)
-
-#SDCLANG := true
-
-#SDCLANG_PATH := vendor/qcom/sdclang-3.8/bin
-
-#SDCLANG_LTO_DEFS :=  vendor/pixeldust/sdclang/sdllvm-lto-defs.mk
-
-#endif
+TARGET_USE_SDCLANG := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -68,8 +58,8 @@ TARGET_KERNEL_SOURCE := kernel/leeco/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 #KERNEL_TOOLCHAIN := ~/android/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.x/bin
-#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-$(TARGET_GCC_VERSION_KERNEL)/bin
-#KERNEL_TOOLCHAIN_PREFIX := aarch64-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-$(TARGET_GCC_VERSION_KERNEL)/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
