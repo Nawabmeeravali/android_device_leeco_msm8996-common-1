@@ -130,7 +130,6 @@ static int process_cam_preview_hint(void *metadata)
     return HINT_NONE;
 }
 #endif
->>>>>>> parent of 58eed24... oneplus3:power: Support boost and perf profile hints
 
 static int process_boost(int boost_handle, int duration)
 {
