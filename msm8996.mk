@@ -160,10 +160,6 @@ PRODUCT_PACKAGES += \
     camera.msm8996 \
     Snap
 
-# Copy prebuilt libc
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/libshims/libc.so:system/lib/libc.so
-
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
