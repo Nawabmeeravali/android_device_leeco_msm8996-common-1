@@ -157,11 +157,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     libshim_camera \
     camera.msm8996 \
-    Snap
-
-# Copy prebuilt libc
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/libshims/libc.so:system/lib/libc.so
+    libshims_camera \
+    libshims_camera_client \
+    libshims_qcamera-daemon
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
