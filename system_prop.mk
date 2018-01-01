@@ -86,8 +86,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bt.enableAptXHD=true \
-    ro.bt.bdaddr_path="/data/misc/bluetooth/bdaddr"
+    bt.max.hfpclient.connections=1 \
+    qcom.bluetooth.soc=rome \
+    ro.bluetooth.wipower=true \
+    ro.bluetooth.emb_wp_mode=true \
+    persist.bt.enableAptXHD=true 
 
 # System property for cabl
 PRODUCT_PROPERTY_OVERRIDES += \
