@@ -118,8 +118,10 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 #TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 
 # Charger
+WITH_CM_CHARGER := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_leeco_msm8996
@@ -196,12 +198,10 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 #TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Sensors
-#USE_SENSOR_MULTI_HAL := true
+USE_SENSOR_MULTI_HAL := true
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
-
-PRODUCT_BOOT_JARS += com.qti.location.sdk
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
