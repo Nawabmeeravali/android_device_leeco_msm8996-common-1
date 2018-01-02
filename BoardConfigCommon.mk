@@ -201,7 +201,7 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
 
-PRODUCT_BOOT_JARS += com.qti.dpmframework dpmapi com.qti.location.sdk
+PRODUCT_BOOT_JARS += com.qti.location.sdk
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
