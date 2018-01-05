@@ -153,13 +153,12 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
     android.hardware.camera.provider@2.4-impl \
     libshim_camera \
     camera.msm8996 \
     libshims_camera \
-    libshims_camera_client \
-    libshims_qcamera-daemon
+    libshims_qcamera-daemon \
+    Snap
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
