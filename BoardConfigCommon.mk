@@ -60,6 +60,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
@@ -78,7 +79,7 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
+#BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 
 # Audio
 #AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -215,7 +216,7 @@ TARGET_RIL_VARIANT := caf
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
 
-PRODUCT_BOOT_JARS += com.qti.dpmframework dpmapi com.qti.location.sdk
+#PRODUCT_BOOT_JARS += com.qti.dpmframework dpmapi com.qti.location.sdk
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
