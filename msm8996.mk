@@ -40,8 +40,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.gradient_cache_size=1 \
     ro.hwui.drop_shadow_cache_size=6 \
     ro.hwui.texture_cache_flushrate=0.4 \
-    ro.hwui.text_small_cache_width=1024 \
-    ro.hwui.text_small_cache_height=1024 \
+u    ro.hwui.text_small_cache_width=1024 \
+   ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=2048 \
     ro.hwui.text_large_cache_height=1024
 
@@ -199,8 +199,8 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    Doze
+#PRODUCT_PACKAGES += \
+#    Doze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -224,8 +224,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti \
+#    android.hardware.gnss@1.0-impl-qti \
+#    android.hardware.gnss@1.0-service-qti \
     libgnss \
     libgnsspps \
     libcurl
