@@ -161,8 +161,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     libshim_camera \
-    camera.msm8996 \
-    Snap
+    camera.msm8996 
 
 # Copy prebuilt libc
 PRODUCT_COPY_FILES += \
@@ -179,11 +178,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.configstore@1.0-service \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
     copybit.msm8996 \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
@@ -209,8 +205,8 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    Doze
+#PRODUCT_PACKAGES += \
+#    Doze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -227,8 +223,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti \
+#    android.hardware.gnss@1.0-impl-qti \
+#    android.hardware.gnss@1.0-service-qti \
     libgnss \
     libgnsspps \
     libcurl

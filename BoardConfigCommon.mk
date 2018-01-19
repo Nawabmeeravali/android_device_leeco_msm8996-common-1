@@ -29,7 +29,7 @@ TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
 
 # Use Snapdragon LLVM, if available
-#TARGET_USE_SDCLANG := true
+TARGET_USE_SDCLANG := true
 
 # Architecture
 TARGET_ARCH := arm64
