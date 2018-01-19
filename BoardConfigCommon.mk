@@ -200,9 +200,6 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 # Sensors
 #USE_SENSOR_MULTI_HAL := true
 
-# RIL
-#TARGET_RIL_VARIANT := caf
-
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
 
