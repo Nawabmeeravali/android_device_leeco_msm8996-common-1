@@ -102,6 +102,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_BOOT_JARS += \
 #    org.ifaa.android.manager
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -215,8 +222,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-#    android.hardware.gnss@1.0-impl-qti \
-#    android.hardware.gnss@1.0-service-qti \
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti \
     libgnss \
     libgnsspps \
     libcurl
