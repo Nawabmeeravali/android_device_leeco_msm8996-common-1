@@ -135,13 +135,10 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCNE := true
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # CPU
 ENABLE_CPUSETS := true
-# Disable EAS until fully brought up on new kernel
-#ENABLE_SCHEDBOOST := true
-#TARGET_USES_INTERACTION_BOOST := true
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
