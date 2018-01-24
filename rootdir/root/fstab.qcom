@@ -10,7 +10,11 @@
 /dev/block/bootdevice/by-name/recovery                       /recovery         emmc    defaults                                                                defaults
 /dev/block/bootdevice/by-name/userdata                       /data             ext4    nosuid,nodev,noatime,nodiratime,barrier=1,noauto_da_alloc               wait,check,encryptable=footer,formattable,length=-16384
 /dev/block/bootdevice/by-name/cache                          /cache            ext4    nosuid,nodev,noatime,nodiratime,barrier=1                               wait,check,formattable
+<<<<<<< HEAD
 /dev/block/bootdevice/by-name/persist                        /persist          ext4    nosuid,nodev,barrier=1                                                  wait
+=======
+/dev/block/bootdevice/by-name/persist                        /persist          ext4    nosuid,nodev,noatime,barrier=1                                                  wait
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 /dev/block/bootdevice/by-name/dsp                            /dsp              ext4    ro,nosuid,nodev,barrier=1                                               wait
 /dev/block/bootdevice/by-name/misc                           /misc             emmc    defaults                                                                defaults
 /dev/block/bootdevice/by-name/modem                          /firmware         vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337                wait

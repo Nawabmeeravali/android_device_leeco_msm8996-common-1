@@ -37,7 +37,10 @@
 #include <platform_lib_log_util.h>
 #include <MsgTask.h>
 #include <loc_nmea.h>
+<<<<<<< HEAD
 #include <DataItemsFactoryProxy.h>
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 #include <SystemStatus.h>
 #include <SystemStatusOsObserver.h>
 
@@ -1213,8 +1216,12 @@ IOsObserver* SystemStatus::getOsObserver()
 }
 
 SystemStatus::SystemStatus(const MsgTask* msgTask) :
+<<<<<<< HEAD
     mSysStatusObsvr(msgTask),
     mConnected(false)
+=======
+    mSysStatusObsvr(msgTask)
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 {
     int result = 0;
     ENTRY_LOG ();
@@ -1416,6 +1423,7 @@ bool SystemStatus::setPositionFailure(const SystemStatusPQWS1& nmea)
 }
 
 /******************************************************************************
+<<<<<<< HEAD
  SystemStatus - storing dataitems
 ******************************************************************************/
 bool SystemStatus::setNetworkInfo(IDataItemCore* dataitem)
@@ -1438,6 +1446,8 @@ bool SystemStatus::setNetworkInfo(IDataItemCore* dataitem)
 }
 
 /******************************************************************************
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 @brief      API to set report data into internal buffer
 
 @param[In]  data pointer to the NMEA string
@@ -1558,6 +1568,7 @@ bool SystemStatus::eventPosition(const UlpLocation& location,
 }
 
 /******************************************************************************
+<<<<<<< HEAD
 @brief      API to set report DataItem event into internal buffer
 
 @param[In]  DataItem
@@ -1578,6 +1589,8 @@ bool SystemStatus::eventDataItemNotify(IDataItemCore* dataitem)
 }
 
 /******************************************************************************
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 @brief      API to get report data into a given buffer
 
 @param[In]  reference to report buffer
@@ -1756,6 +1769,7 @@ bool SystemStatus::setDefaultReport(void)
     return true;
 }
 
+<<<<<<< HEAD
 /******************************************************************************
 @brief      API to handle connection status update event from GnssRil
 
@@ -1784,5 +1798,7 @@ bool SystemStatus::eventConnectionStatus(bool connected, uint8_t type)
     return true;
 }
 
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 } // namespace loc_core
 

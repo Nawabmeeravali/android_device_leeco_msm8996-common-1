@@ -18,6 +18,7 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<<<<<<< HEAD
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <!-- <bool name="config_intrusiveBatteryLed">true</bool> -->
 
@@ -35,4 +36,11 @@
 
     <!-- Enable adjusting the button backlight -->
     <!-- <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
+=======
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option 
+    <bool name="config_intrusiveBatteryLed">true</bool>
+
+     Enable adjusting the button backlight
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 </resources>

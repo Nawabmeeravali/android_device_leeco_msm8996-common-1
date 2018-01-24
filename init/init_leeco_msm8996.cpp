@@ -33,14 +33,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-
-#include <android-base/file.h>
-#include <android-base/logging.h>
-#include <android-base/properties.h>
-#include <android-base/strings.h>
-
+#include <fcntl.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
@@ -50,25 +43,28 @@
 
 #define DEVINFO_FILE "/dev/block/sde21"
 
-using android::base::Trim;
-using android::base::GetProperty;
-using android::base::ReadFileToString;
-using android::init::property_set;
+void property_override(char const prop[], char const value[])
+{
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
+
+static int read_file2(const char *fname, char *data, int max_size)
+{
+    int fd, rc;
 
 void property_override(const std::string& name, const std::string& value)
 {
     size_t valuelen = value.size();
 
-    prop_info* pi = (prop_info*) __system_property_find(name.c_str());
-    if (pi != nullptr) {
-        __system_property_update(pi, value.c_str(), valuelen);
-    }
-    else {
-        int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
-        if (rc < 0) {
-            LOG(ERROR) << "property_set(\"" << name << "\", \"" << value << "\") failed: "
-                       << "__system_property_add failed";
-        }
+    fd = open(fname, O_RDONLY);
+    if (fd < 0) {
+        return 0;
     }
 }
 
@@ -158,41 +154,41 @@ void init_alarm_boot_properties()
          * 7 -> CBLPWR_N pin toggled (for external power supply)
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
-        if (Trim(boot_reason) == "0") {
-            property_set("ro.boot.bootreason", "invalid");
-            property_set("ro.alarm_boot", "false");
+        if (buf[0] == '0') {
+            android::init::property_set("ro.boot.bootreason", "invalid");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "1") {
-            property_set("ro.boot.bootreason", "hard_reset");
-            property_set("ro.alarm_boot", "false");
+        else if (buf[0] == '1') {
+            android::init::property_set("ro.boot.bootreason", "hard_reset");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "2") {
-            property_set("ro.boot.bootreason", "smpl");
-            property_set("ro.alarm_boot", "false");
+        else if (buf[0] == '2') {
+            android::init::property_set("ro.boot.bootreason", "smpl");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "3") {
-            property_set("ro.alarm_boot", "true");
+        else if (buf[0] == '3'){
+            android::init::property_set("ro.alarm_boot", "true");
         }
-        else if (Trim(boot_reason) == "4") {
-            property_set("ro.boot.bootreason", "dc_chg");
-            property_set("ro.alarm_boot", "false");
+        else if (buf[0] == '4') {
+            android::init::property_set("ro.boot.bootreason", "dc_chg");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "5") {
-            property_set("ro.boot.bootreason", "usb_chg");
-            property_set("ro.alarm_boot", "false");
+        else if (buf[0] == '5') {
+            android::init::property_set("ro.boot.bootreason", "usb_chg");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "6") {
-            property_set("ro.boot.bootreason", "pon1");
-            property_set("ro.alarm_boot", "false");
+        else if (buf[0] == '6') {
+            android::init::property_set("ro.boot.bootreason", "pon1");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "7") {
-            property_set("ro.boot.bootreason", "cblpwr");
-            property_set("ro.alarm_boot", "false");
+        else if (buf[0] == '7') {
+            android::init::property_set("ro.boot.bootreason", "cblpwr");
+            android::init::property_set("ro.alarm_boot", "false");
         }
-        else if (Trim(boot_reason) == "8") {
-            property_set("ro.boot.bootreason", "kpdpwr");
-            property_set("ro.alarm_boot", "false");
-        }
+        else if (buf[0] == '8') {
+            android::init::property_set("ro.boot.bootreason", "kpdpwr");
+            android::init::property_set("ro.alarm_boot", "false");
+       }
     }
     else {
         LOG(ERROR) << "Unable to read bootreason from " << boot_reason_file;
@@ -200,7 +196,63 @@ void init_alarm_boot_properties()
 }
 
 void vendor_load_properties() {
-    LOG(INFO) << "Loading vendor specific properties";
-    init_target_properties();
+    char device[PROP_VALUE_MAX];
+    int isLEX720 = 0, isLEX727 = 0, isLEX820 = 0, isLEX829 = 0;
+
+    if (read_file2(DEVINFO_FILE, device, sizeof(device)))
+    {
+        if (!strncmp(device, "le_zl1_oversea", 14))
+        {
+            isLEX727 = 1;
+        }
+        else if (!strncmp(device, "le_zl1", 6))
+        {
+            isLEX720 = 1;
+        }
+        else if (!strncmp(device, "le_x2_na_oversea", 16))
+        {
+            isLEX829 = 1;
+        }
+        else if (!strncmp(device, "le_x2", 5))
+        {
+            isLEX820 = 1;
+        }
+    }
+
+    if (isLEX720)
+    {
+        // This is LEX720
+        property_override("ro.product.model", "LEX720");
+        android::init::property_set("persist.data.iwlan.enable", "false");
+        // Dual SIM
+        android::init::property_set("persist.radio.multisim.config", "dsds");
+    }
+    else if (isLEX727)
+    {
+        // This is LEX727
+        property_override("ro.product.model", "LEX727");
+        android::init::property_set("persist.data.iwlan.enable", "true");
+        // Single SIM
+        android::init::property_set("persist.radio.multisim.config", "NA");
+    }
+    else if (isLEX820)
+    {
+        // This is LEX820
+        property_override("ro.product.model", "LEX820");
+        // Dual SIM
+        android::init::property_set("persist.radio.multisim.config", "dsds");
+    }
+    else if (isLEX829)
+    {
+        // This is LEX829
+        property_override("ro.product.model", "LEX829");
+        // Dual SIM
+        android::init::property_set("persist.radio.multisim.config", "dsds");
+    }
+    else
+    {
+        property_override("ro.product.model", "UNKNOWN");
+    }
+
     init_alarm_boot_properties();
 }

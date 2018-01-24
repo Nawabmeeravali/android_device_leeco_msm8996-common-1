@@ -91,10 +91,17 @@ typedef uint32_t LocSvInfoSource;
 
 /*Emergency SUPL*/
 #define LOC_GPS_NI_TYPE_EMERGENCY_SUPL    4
+<<<<<<< HEAD:gps/utils/gps_extended_c.h
 
 #define LOC_AGPS_CERTIFICATE_MAX_LENGTH 2000
 #define LOC_AGPS_CERTIFICATE_MAX_SLOTS 10
 
+=======
+
+#define LOC_AGPS_CERTIFICATE_MAX_LENGTH 2000
+#define LOC_AGPS_CERTIFICATE_MAX_SLOTS 10
+
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:gps/utils/gps_extended_c.h
 typedef uint32_t LocPosTechMask;
 #define LOC_POS_TECH_MASK_DEFAULT ((LocPosTechMask)0x00000000)
 #define LOC_POS_TECH_MASK_SATELLITE ((LocPosTechMask)0x00000001)
@@ -143,7 +150,11 @@ typedef struct {
 
 
 /** AGPS type */
+<<<<<<< HEAD:gps/utils/gps_extended_c.h
 typedef int8_t AGpsExtType;
+=======
+typedef int16_t AGpsExtType;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:gps/utils/gps_extended_c.h
 #define LOC_AGPS_TYPE_INVALID       -1
 #define LOC_AGPS_TYPE_ANY           0
 #define LOC_AGPS_TYPE_SUPL          1
@@ -160,6 +171,17 @@ typedef int16_t AGpsBearerType;
 #define AGPS_APN_BEARER_IPV4        1
 #define AGPS_APN_BEARER_IPV6        2
 #define AGPS_APN_BEARER_IPV4V6      3
+
+typedef enum {
+    AGPS_CB_PRIORITY_LOW  = 1,
+    AGPS_CB_PRIORITY_MED  = 2,
+    AGPS_CB_PRIORITY_HIGH = 3
+} AgpsCbPriority;
+
+typedef struct {
+    void* statusV4Cb;
+    AgpsCbPriority cbPriority;
+} AgpsCbInfo;
 
 typedef enum {
     AGPS_CB_PRIORITY_LOW  = 1,
@@ -1238,6 +1260,7 @@ typedef struct
     Gnss_Srn_MacAddr_Type  macAddrType; /* SRN AP MAC Address type */
 } GnssSrnDataReq;
 
+<<<<<<< HEAD:gps/utils/gps_extended_c.h
 /*
  * Represents the status of AGNSS augmented to support IPv4.
  */
@@ -1282,6 +1305,8 @@ typedef void (*LocAgpsOpenResultCb)(bool isSuccess, AGpsExtType agpsType, const 
 
 typedef void (*LocAgpsCloseResultCb)(bool isSuccess, AGpsExtType agpsType, void* userDataPtr);
 
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:gps/utils/gps_extended_c.h
 
 #ifdef __cplusplus
 }

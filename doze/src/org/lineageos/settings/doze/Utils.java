@@ -19,7 +19,10 @@ package org.lineageos.settings.doze;
 
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/Utils.java
 import android.content.pm.PackageManager;
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/Utils.java
 import android.os.UserHandle;
 import android.support.v7.preference.PreferenceManager;
 import android.provider.Settings;
@@ -34,8 +37,11 @@ public final class Utils {
 
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/Utils.java
     protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
 
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/Utils.java
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
@@ -58,6 +64,7 @@ public final class Utils {
         } else {
             stopService(context);
         }
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/Utils.java
     }
 
     protected static boolean getProxCheckBeforePulse(Context context) {
@@ -69,6 +76,8 @@ public final class Utils {
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/Utils.java
     }
 
     protected static boolean isDozeEnabled(Context context) {

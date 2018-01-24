@@ -21,11 +21,14 @@ on boot
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
 
+<<<<<<< HEAD
     # EAS: Set default schedTune value for foreground/top-app (only affects EAS)
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     # HMP: Enable sched boost (no effect on EAS)
     write /proc/sys/kernel/sched_boost 1
 
@@ -62,9 +65,12 @@ on init-cpus
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
+<<<<<<< HEAD
 
     # EAS: Cap the max frequency of silver core to 1.6 GHz
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
     # Configure governor settings for big cluster
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
@@ -80,6 +86,7 @@ on init-cpus
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 39000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 0
+<<<<<<< HEAD
 
     # EAS: Switch to schedutil governor (no effect if not EAS)
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
@@ -90,6 +97,8 @@ on init-cpus
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
     write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 6000
     write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 2000
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
     # Re-enable thermal and BCL hotplug
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -148,9 +157,21 @@ on charger
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
+<<<<<<< HEAD
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"
 
+=======
+service charger /charger
+    class charger
+    group log system graphics
+    writepid /dev/cpuset/system-background/tasks
+#seclabel u:r:charger:s0
+on property:dev.bootcomplete=1
+    setprop sys.io.scheduler "cfq"
+    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/module/msm_thermal/parameters/enabled Y
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     # Update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-2

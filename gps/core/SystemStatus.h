@@ -34,7 +34,10 @@
 #include <vector>
 #include <platform_lib_log_util.h>
 #include <MsgTask.h>
+<<<<<<< HEAD
 #include <IDataItemCore.h>
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 #include <IOsObserver.h>
 #include <SystemStatusOsObserver.h>
 
@@ -369,6 +372,7 @@ public:
 };
 
 /******************************************************************************
+<<<<<<< HEAD
  SystemStatus report data structure - from DataItem observer
 ******************************************************************************/
 class SystemStatusGpsState : public SystemStatusItemBase, public IDataItemCore
@@ -530,21 +534,31 @@ public:
 };
 
 /******************************************************************************
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
  SystemStatusReports
 ******************************************************************************/
 class SystemStatusReports
 {
 public:
+<<<<<<< HEAD
     // from QMI_LOC indication
     std::vector<SystemStatusLocation>         mLocation;
 
     // from ME debug NMEA
+=======
+    std::vector<SystemStatusLocation>         mLocation;
+
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     std::vector<SystemStatusTimeAndClock>     mTimeAndClock;
     std::vector<SystemStatusXoState>          mXoState;
     std::vector<SystemStatusRfAndParams>      mRfAndParams;
     std::vector<SystemStatusErrRecovery>      mErrRecovery;
 
+<<<<<<< HEAD
     // from PE debug NMEA
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     std::vector<SystemStatusInjectedPosition> mInjectedPosition;
     std::vector<SystemStatusBestPosition>     mBestPosition;
     std::vector<SystemStatusXtra>             mXtra;
@@ -553,6 +567,7 @@ public:
     std::vector<SystemStatusPdr>              mPdr;
     std::vector<SystemStatusNavData>          mNavData;
 
+<<<<<<< HEAD
     // from SM debug NMEA
     std::vector<SystemStatusPositionFailure>  mPositionFailure;
 
@@ -561,6 +576,9 @@ public:
     std::vector<SystemStatusNetworkInfo>      mNetworkInfo;
     std::vector<SystemStatusTac>              mTac;
     std::vector<SystemStatusMccMnc>           mMccMnc;
+=======
+    std::vector<SystemStatusPositionFailure>  mPositionFailure;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 };
 
 /******************************************************************************
@@ -596,6 +614,7 @@ private:
 
     static const uint32_t                     maxPositionFailure = 5;
 
+<<<<<<< HEAD
     static const uint32_t                     maxGpsState = 5;
     static const uint32_t                     maxNetworkInfo = 5;
     static const uint32_t                     maxTac = 5;
@@ -603,6 +622,9 @@ private:
 
     SystemStatusReports mCache;
     bool mConnected;
+=======
+    SystemStatusReports mCache;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
     bool setLocation(const UlpLocation& location);
 
@@ -621,8 +643,11 @@ private:
 
     bool setPositionFailure(const SystemStatusPQWS1& nmea);
 
+<<<<<<< HEAD
     bool setNetworkInfo(IDataItemCore* dataitem);
 
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 public:
     // Static methods
     static SystemStatus* getInstance(const MsgTask* msgTask);
@@ -631,11 +656,17 @@ public:
 
     // Helpers
     bool eventPosition(const UlpLocation& location,const GpsLocationExtended& locationEx);
+<<<<<<< HEAD
     bool eventDataItemNotify(IDataItemCore* dataitem);
     bool setNmeaString(const char *data, uint32_t len);
     bool getReport(SystemStatusReports& reports, bool isLatestonly = false) const;
     bool setDefaultReport(void);
     bool eventConnectionStatus(bool connected, uint8_t type);
+=======
+    bool setNmeaString(const char *data, uint32_t len);
+    bool getReport(SystemStatusReports& reports, bool isLatestonly = false) const;
+    bool setDefaultReport(void);
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 };
 
 } // namespace loc_core

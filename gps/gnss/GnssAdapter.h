@@ -106,11 +106,18 @@ class GnssAdapter : public LocAdapterBase {
     // This must be initialized via initAgps()
     AgpsManager mAgpsManager;
     AgpsCbInfo mAgpsCbInfo;
+<<<<<<< HEAD
 
     /* === SystemStatus ===================================================================== */
     SystemStatus* mSystemStatus;
     std::string mServerUrl;
     XtraSystemStatusObserver mXtraObserver;
+=======
+    XtraSystemStatusObserver mXtraObserver;
+
+    /* === SystemStatus ===================================================================== */
+    SystemStatus* mSystemStatus;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
     /*==== CONVERSION ===================================================================*/
     static void convertOptions(LocPosMode& out, const LocationOptions& options);
@@ -171,7 +178,11 @@ public:
     void saveTrackingSession(LocationAPI* client, uint32_t sessionId,
                              const LocationOptions& options);
     void eraseTrackingSession(LocationAPI* client, uint32_t sessionId);
+<<<<<<< HEAD
     bool setUlpPositionMode(const LocPosMode& mode);
+=======
+    void setUlpPositionMode(const LocPosMode& mode) { mUlpPositionMode = mode; }
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     LocPosMode& getUlpPositionMode() { return mUlpPositionMode; }
     LocationError startTrackingMultiplex(const LocationOptions& options);
     LocationError startTracking(const LocationOptions& options);
@@ -199,10 +210,17 @@ public:
     uint32_t* gnssUpdateConfigCommand(GnssConfig config);
     uint32_t gnssDeleteAidingDataCommand(GnssAidingData& data);
 
+<<<<<<< HEAD
     void initDefaultAgpsCommand();
     void initAgpsCommand(const AgpsCbInfo& cbInfo);
     void dataConnOpenCommand(AGpsExtType agpsType,
             const char* apnName, int apnLen, AGpsBearerType bearerType);
+=======
+    void initAgpsCommand(const AgpsCbInfo& cbInfo);
+    void dataConnOpenCommand(
+            AGpsExtType agpsType,
+            const char* apnName, int apnLen, LocApnIpType ipType);
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     void dataConnClosedCommand(AGpsExtType agpsType);
     void dataConnFailedCommand(AGpsExtType agpsType);
 
@@ -216,8 +234,11 @@ public:
     void setPowerVoteId(uint32_t id) { mPowerVoteId = id; }
     uint32_t getPowerVoteId() { return mPowerVoteId; }
     bool resolveInAddress(const char* hostAddress, struct in_addr* inAddress);
+<<<<<<< HEAD
     virtual bool isInSession() { return !mTrackingSessions.empty(); }
     void initDefaultAgps();
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
     /* ==== REPORTS ======================================================================== */
     /* ======== EVENTS ====(Called from QMI/ULP Thread)===================================== */
@@ -257,8 +278,11 @@ public:
 
     /*==== SYSTEM STATUS ================================================================*/
     inline SystemStatus* getSystemStatus(void) { return mSystemStatus; }
+<<<<<<< HEAD
     std::string& getServerUrl(void) { return mServerUrl; }
     void setServerUrl(const char* server) { mServerUrl.assign(server); }
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
     /*==== CONVERSION ===================================================================*/
     static uint32_t convertGpsLock(const GnssConfigGpsLock gpsLock);
@@ -282,6 +306,13 @@ public:
     void injectLocationCommand(double latitude, double longitude, float accuracy);
     void injectTimeCommand(int64_t time, int64_t timeReference, int32_t uncertainty);
 
+<<<<<<< HEAD
+=======
+    inline void updateConnectionStatusCommand(bool connected, uint8_t type) {
+        mXtraObserver.updateConnectionStatus(connected, type);
+    }
+
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 };
 
 #endif //GNSS_ADAPTER_H

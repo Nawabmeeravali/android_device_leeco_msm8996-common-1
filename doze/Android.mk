@@ -18,6 +18,10 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-appcompat \
     android-support-v14-preference \
+<<<<<<< HEAD
+=======
+    org.lineageos.platform.internal
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \

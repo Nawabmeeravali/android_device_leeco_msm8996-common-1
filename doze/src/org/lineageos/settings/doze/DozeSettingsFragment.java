@@ -17,7 +17,6 @@
 
 package org.lineageos.settings.doze;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -64,6 +63,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
         boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
 
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/DozeSettingsFragment.java
         PreferenceCategory proximitySensorCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_PROX_SENSOR);
 
@@ -82,6 +82,18 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         }
     }
 
+=======
+        mPickUpPreference = (SwitchPreference) findPreference(Utils.GESTURE_PICK_UP_KEY);
+        mPickUpPreference.setEnabled(dozeEnabled);
+
+        mHandwavePreference = (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
+        mHandwavePreference.setEnabled(dozeEnabled);
+
+        mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
+        mPocketPreference.setEnabled(dozeEnabled);
+    }
+
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/DozeSettingsFragment.java
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -129,6 +141,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPickUpPreference.setEnabled(b);
         mHandwavePreference.setEnabled(b);
         mPocketPreference.setEnabled(b);
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/DozeSettingsFragment.java
     }
 
     @Override
@@ -138,6 +151,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             return true;
         }
         return false;
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/DozeSettingsFragment.java
     }
 
     private static class HelpDialogFragment extends DialogFragment {

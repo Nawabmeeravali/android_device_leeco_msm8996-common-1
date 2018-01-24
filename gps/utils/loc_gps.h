@@ -208,7 +208,11 @@ typedef int LocGpsNiEncodingType;
 #define LOC_GPS_ENC_UNKNOWN                -1
 
 /** AGPS status event values. */
+<<<<<<< HEAD
 typedef uint8_t LocAGpsStatusValue;
+=======
+typedef uint16_t LocAGpsStatusValue;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 /** GPS requests data connection for AGPS. */
 #define LOC_GPS_REQUEST_AGPS_DATA_CONN  1
 /** GPS releases the AGPS data connection. */

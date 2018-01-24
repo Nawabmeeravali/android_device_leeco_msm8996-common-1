@@ -49,6 +49,13 @@
             android:name=".DozeSettingsActivity"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
+<<<<<<< HEAD
+=======
+            <intent-filter>
+                <action android:name="org.cyanogenmod.settings.device.DOZE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
         </activity>
 
     </application>

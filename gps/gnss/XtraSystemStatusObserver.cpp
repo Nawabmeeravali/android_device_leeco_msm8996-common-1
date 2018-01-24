@@ -45,29 +45,44 @@
 #include <sstream>
 #include <XtraSystemStatusObserver.h>
 #include <LocAdapterBase.h>
+<<<<<<< HEAD
 #include <DataItemId.h>
 #include <DataItemsFactoryProxy.h>
 
+=======
+
+using namespace std;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 using namespace loc_core;
 
 #define XTRA_HAL_SOCKET_NAME "/data/vendor/location/xtra/socket_hal_xtra"
 
 bool XtraSystemStatusObserver::updateLockStatus(uint32_t lock) {
+<<<<<<< HEAD
     stringstream ss;
+=======
+    std::stringstream ss;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     ss <<  "gpslock";
     ss << " " << lock;
     ss << "\n"; // append seperator
     return ( sendEvent(ss) );
 }
 
+<<<<<<< HEAD
 bool XtraSystemStatusObserver::updateConnectionStatus(bool connected, uint32_t type) {
     stringstream ss;
+=======
+bool XtraSystemStatusObserver::updateConnectionStatus(bool connected, uint8_t type) {
+    std::stringstream ss;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     ss <<  "connection";
     ss << " " << (connected ? "1" : "0");
     ss << " " << (int)type;
     ss << "\n"; // append seperator
     return ( sendEvent(ss) );
 }
+<<<<<<< HEAD
 bool XtraSystemStatusObserver::updateTac(const string& tac) {
     stringstream ss;
     ss <<  "tac";
@@ -85,15 +100,26 @@ bool XtraSystemStatusObserver::updateMccMnc(const string& mccmnc) {
 }
 
 bool XtraSystemStatusObserver::sendEvent(const stringstream& event) {
+=======
+
+bool XtraSystemStatusObserver::sendEvent(std::stringstream& event) {
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     int socketFd = createSocket();
     if (socketFd < 0) {
         LOC_LOGe("XTRA unreachable. sending failed.");
         return false;
     }
 
+<<<<<<< HEAD
     const string& data = event.str();
     int remain = data.length();
     ssize_t sent = 0;
+=======
+    const std::string& data = event.str();
+    int remain = data.length();
+    ssize_t sent = 0;
+
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     while (remain > 0 &&
           (sent = ::send(socketFd, data.c_str() + (data.length() - remain),
                        remain, MSG_NOSIGNAL)) > 0) {
@@ -140,6 +166,7 @@ void XtraSystemStatusObserver::closeSocket(const int socketFd) {
         }
     }
 }
+<<<<<<< HEAD
 
 void XtraSystemStatusObserver::subscribe(bool yes)
 {
@@ -232,3 +259,5 @@ void XtraSystemStatusObserver::notify(const list<IDataItemCore*>& dlist)
 }
 
 
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195

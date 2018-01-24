@@ -228,7 +228,11 @@ static void agpsDataConnOpen(
 
     if (NULL != gGnssAdapter) {
         gGnssAdapter->dataConnOpenCommand(
+<<<<<<< HEAD
                 agpsType, apnName, apnLen, (AGpsBearerType)ipType);
+=======
+                agpsType, apnName, apnLen, ipType);
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     }
 }
 static void agpsDataConnClosed(AGpsExtType agpsType) {
@@ -253,6 +257,12 @@ static void getDebugReport(GnssDebugReport& report) {
 
 static void updateConnectionStatus(bool connected, uint8_t type) {
     if (NULL != gGnssAdapter) {
+<<<<<<< HEAD
         gGnssAdapter->getSystemStatus()->eventConnectionStatus(connected, type);
     }
 }
+=======
+        gGnssAdapter->updateConnectionStatusCommand(connected, type);
+    }
+}
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195

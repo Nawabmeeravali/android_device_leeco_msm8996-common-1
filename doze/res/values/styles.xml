@@ -15,6 +15,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<<<<<<< HEAD
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <style name="Theme.Main" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="dialogPreferenceStyle">@style/Theme.Main.DialogPreferenceStyle</item>
@@ -26,6 +27,11 @@
     </style>
 
     <style name="Theme.Main.DialogPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
+=======
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="Theme.Main" parent="@android:style/Theme.Material.Settings">
+        <item name="preferenceTheme">@android:style/Theme.Material.Settings</item>
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
     </style>
 
     <style name="Theme.Main.PreferenceFragmentStyle" parent="@*android:style/PreferenceFragment.Material">
@@ -34,6 +40,7 @@
 
     <style name="Theme.Main.PreferenceTheme">
     </style>
+<<<<<<< HEAD
 
     <style name="Theme.Main.SwitchPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
@@ -41,4 +48,6 @@
 
     <style name="Theme.Main.SwitchBar" parent="@android:style/ThemeOverlay.Material.ActionBar">
     </style>
+=======
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
 </resources>

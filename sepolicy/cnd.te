@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 allow cnd self:capability { dac_override chown fsetid };
+=======
+allow cnd diag_prop:property_service set;
+
+get_prop(cnd, diag_prop);
+
+allow cnd socket_device:sock_file { setattr unlink };
+
+allow cnd diag_device:chr_file { rw_file_perms };
+
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195

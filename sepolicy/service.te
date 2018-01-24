@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 type fingerprintd_custom_service, service_manager_type;
+=======
+type ifaadaemon_service,          service_manager_type;
+
+# daizhiling add for goodix_fingerprint begin
+type gx_fpd_service, app_api_service, system_server_service, service_manager_type;
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195

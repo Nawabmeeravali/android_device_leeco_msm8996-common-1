@@ -84,7 +84,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
-    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml \
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -114,7 +115,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    audiod \
+    android.hardware.audio.effect@2.0-service \
+    android.hardware.soundtrigger@2.0-impl \
+    android.hardware.soundtrigger@2.0-service \
     audio.a2dp.default \
     audio.primary.msm8996 \
     audio.r_submix.default \
@@ -141,7 +144,8 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
 
 # ANT+
 #PRODUCT_PACKAGES += \
@@ -155,17 +159,30 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
-# Camera
+# ANT+
+#PRODUCT_PACKAGES += \
+#    AntHalService \
+#    com.dsi.ant.antradio_library \
+#    libantradio
+
+#PRODUCT_COPY_FILES += \
+#    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
+
+# Bluetooth
 PRODUCT_PACKAGES += \
+    Snap \
     android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-service \
+    libshim_camera \
     camera.msm8996 \
-    libshims_camera \
-    libshims_camera_client \
-    libshims_qcamera-daemon \
     Snap
+
+# Copy prebuilt libc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/libshims/libc.so:system/lib/libc.so
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -173,23 +190,41 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Display
+# Display / Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.configstore@1.0-service \
     android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     copybit.msm8996 \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
+    libdisplayconfig \
+    libhwc2on1adapter \
     libgenlock \
     liboverlay \
     libtinyxml
 
+PRODUCT_PACKAGES += \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.0_vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/FOSSConfig.xml:system/etc/FOSSConfig.xml
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0-java
+
+PRODUCT_PACKAGES += \
+    libstlport
+
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -205,15 +240,14 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
 
-# For android_filesystem_config.h
+# DRM
 PRODUCT_PACKAGES += \
-    fs_config_files
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-impl
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service-custom \
-    fingerprintd \
-    fingerprint.msm8996
+    android.hardware.biometrics.fingerprint@2.0-service
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -236,6 +270,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+
 # IRQ
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
@@ -248,6 +286,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
+
+# Libshims
+PRODUCT_PACKAGES += \
+    libshims_ims
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -266,12 +308,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
+    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(TOPDIR)frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    $(TOPDIR)frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
+    $(TOPDIR)frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
 # Netutils
 PRODUCT_PACKAGES += \
@@ -296,8 +336,6 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
@@ -308,7 +346,12 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson 
+
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -337,30 +380,40 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
 
+# LePref settigs modules
+PRODUCT_PACKAGES += \
+    LePref
 
+# LePref Files
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/leeco/msm8996-common/lepref/files,/system/etc)
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service \
     com.android.future.usb.accessory
 
+# Vendor kernel headers
+PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8996/kernel-headers
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
-# Copy prebuilt libc
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/libshims/libc.so:system/lib/libc.so
-
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    android.hardware.tetheroffload.config@1.0 \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
     libwpa_client \
     wificond \
     hostapd \
     dhcpcd.conf \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    WCNSS_wlan_dictionary.dat
+#    ipacm \
+#    ipacm-diag \
+#    IPACM_cfg.xml \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
@@ -371,8 +424,8 @@ PRODUCT_COPY_FILES += \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    ro.adb.secure=0
+    persist.sys.usb.config=mtp
+
 
 # Model is set via init library
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \

@@ -1,6 +1,10 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/ProximitySensor.java
  *               2017 The LineageOS Project
+=======
+ * Copyright (C) 2017 The LineageOS Project
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/ProximitySensor.java
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +49,11 @@ public class ProximitySensor implements SensorEventListener {
     public ProximitySensor(Context context) {
         mContext = context;
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+<<<<<<< HEAD:doze/src/org/lineageos/settings/doze/ProximitySensor.java
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false);
+=======
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195:doze/src/com/cyanogenmod/settings/doze/ProximitySensor.java
     }
 
     @Override

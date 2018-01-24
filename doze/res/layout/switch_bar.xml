@@ -33,7 +33,11 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:textAppearance="@android:style/TextAppearance.Material.Title"
+<<<<<<< HEAD
         android:textColor="?android:attr/textColorPrimary"
+=======
+        android:textColor="?android:attr/textColorPrimaryInverse"
+>>>>>>> 01c7d76dbc83a83fab108fbd1d8c531db9e4a195
         android:textAlignment="viewStart" />
 
     <Switch
