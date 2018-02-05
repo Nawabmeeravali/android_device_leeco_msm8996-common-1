@@ -20,6 +20,10 @@ TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
 
 BOARD_VENDOR := leeco
 
+include vendor/aos/sdclang/sdclang.mk
+
+TARGET_USE_SDCLANG := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
