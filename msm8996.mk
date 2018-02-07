@@ -171,7 +171,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0-java
-	
+
 # KCAL
 PRODUCT_PACKAGES += \
     kcal
@@ -243,7 +243,7 @@ PRODUCT_PACKAGES += \
 # LePref settigs modules
 PRODUCT_PACKAGES += \
     LePref
-	
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
@@ -336,7 +336,9 @@ PRODUCT_BOOT_JARS += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
-
+# TextClassifier smart selection model files
+	PRODUCT_PACKAGES += \
+	textclassifier.smartselection.bundle1
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service \
