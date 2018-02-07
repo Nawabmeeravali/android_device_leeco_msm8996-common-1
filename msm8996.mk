@@ -181,11 +181,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0-java
-
-# KCAL
-PRODUCT_PACKAGES += \
-    kcal
-
 # Doze mode
 PRODUCT_PACKAGES += \
     Doze
@@ -367,28 +362,24 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    libwpa_client \
     hostapd \
+    hostapd_cli \
     wificond \
+    libwifi-hal-qcom \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    hs20-osu-client \
-    WCNSS_wlan_dictionary.dat
+    wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    $(LOCAL_PATH)/wifi/hostapd.conf:system/etc/hostapd/hostapd_default.conf \
-    $(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/wifi/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Model is set via init library
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
