@@ -24,6 +24,16 @@ include vendor/aos/sdclang/sdclang.mk
 
 TARGET_USE_SDCLANG := true
 
+
+# EAS
+ENABLE_SCHEDBOOST := true
+
+# Power HAL
+TARGET_POWERHAL_VARIANT := voxpopuli
+TARGET_USES_INTERACTION_BOOST := true
+
+-include device/voxpopuli/sepolicy/sepolicy.mk
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
@@ -53,7 +63,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/leeco/msm8996
+TARGET_KERNEL_SOURCE := ~/oreo/kernel/leeco/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
