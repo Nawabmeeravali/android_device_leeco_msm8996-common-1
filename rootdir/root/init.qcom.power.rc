@@ -19,10 +19,10 @@ on boot
     write /dev/stune/foreground/schedtune.boost 0
     write /dev/stune/background/schedtune.boost 0
     write /dev/stune/background/schedtune.prefer_idle 0
-    write /dev/stune/top-app/schedtune.boost 0
+    write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
-    write /dev/stune/schedtune.boost 0
-    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.boost 30
+    write /dev/stune/schedtune.prefer_idle 1
 
     # Set Power HAL tunables
     write /dev/voxpopuli/enable_interaction_boost   1
@@ -157,6 +157,10 @@ on init-cpus
     write /proc/sys/kernel/sched_spill_nr_run 3
     write /proc/sys/kernel/sched_init_task_load 100
 
+    # WALT default
+    write /proc/sys/kernel/sched_use_walt_cpu_util 1
+    write /proc/sys/kernel/sched_use_walt_task_util 1
+
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
@@ -207,7 +211,7 @@ on property:dev.bootcomplete=1
     write /dev/cpuset/foreground/boost/cpus 0-1
     write /dev/cpuset/foreground/cpus 0-2
     write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-2
 
 # Kernel tuning
     write /sys/module/msm_thermal/core_control/enabled 0
