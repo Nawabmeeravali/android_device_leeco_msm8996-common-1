@@ -27,7 +27,6 @@ TARGET_USE_SDCLANG := true
 
 # EAS
 ENABLE_SCHEDBOOST := true
-ENABLE_CPUSETS := true
 
 # Power HAL
 TARGET_POWERHAL_VARIANT := voxpopuli
