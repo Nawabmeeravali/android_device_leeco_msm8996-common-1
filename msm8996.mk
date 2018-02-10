@@ -294,9 +294,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
 
-PRODUCT_PACKAGES += \
-    power.msm8996
-
 # Qualcomm
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml \
