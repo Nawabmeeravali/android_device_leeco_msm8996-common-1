@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <Toolbar android:theme="@style/Theme_RagnarDark" android:id="@+id/toolbar_addons" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0x3801" />
+    <View android:background="@drawable/toolbar_dropshadow" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0xa01" />
+    <ListView android:id="@+id/listview" android:layout_width="match_parent" android:layout_height="wrap_content" android:divider="0x0" android:dividerHeight="0dp" />
+</LinearLayout>

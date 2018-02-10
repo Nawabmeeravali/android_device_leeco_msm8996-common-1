@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:enabled="false" android:id="@+id/menu_available_check_md5" android:orderInCategory="99" android:title="@string/available_check_md5" android:showAsAction="always" />
+    <item android:enabled="false" android:id="@+id/menu_available_delete" android:orderInCategory="99" android:title="@string/delete" android:showAsAction="always" />
+    <item android:id="@+id/menu_available_download" android:orderInCategory="100" android:title="@string/download" android:showAsAction="always" />
+    <item android:id="@+id/menu_available_cancel" android:visible="false" android:orderInCategory="100" android:title="@string/cancel" android:showAsAction="always" />
+    <item android:id="@+id/menu_available_install" android:visible="false" android:orderInCategory="100" android:title="@string/install" android:showAsAction="always" />
+</menu>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.AdView xmlns:android="http://schemas.android.com/apk/res-auto" ads:id="@+id/adView" ads:layout_width="match_parent" ads:layout_height="wrap_content" ads:layout_marginTop="15dp" ads:adSize="BANNER" ads:adUnitId="@string/ad_activity_about" />

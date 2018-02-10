@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.IAPTheme">
+        <item>?unknown_ref: 106000d</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>?unknown_ref: 0</item>
+        <item>false</item>
+    </style>
+    <style name="WalletFragmentDefaultDetailsTextAppearance">
+        <item>14sp</item>
+        <item>0</item>
+        <item>@color/wallet_secondary_text_holo_dark</item>
+        <item>@color/wallet_highlighted_text_holo_dark</item>
+        <item>@color/wallet_hint_foreground_holo_dark</item>
+        <item>@color/wallet_holo_blue_light</item>
+    </style>
+    <style name="WalletFragmentDefaultDetailsHeaderTextAppearance">
+        <item>1</item>
+    </style>
+    <style name="WalletFragmentDefaultButtonTextAppearance">
+        <item>18sp</item>
+        <item>0</item>
+        <item>@color/wallet_primary_text_holo_light</item>
+        <item>@color/wallet_highlighted_text_holo_light</item>
+        <item>@color/wallet_hint_foreground_holo_light</item>
+        <item>@color/wallet_link_text_light</item>
+    </style>
+    <style name="WalletFragmentDefaultStyle">
+        <item>48dp</item>
+        <item>-1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>@style/WalletFragmentDefaultDetailsTextAppearance</item>
+        <item>@style/WalletFragmentDefaultDetailsHeaderTextAppearance</item>
+        <item>@color/wallet_bright_foreground_holo_light</item>
+        <item>@style/WalletFragmentDefaultButtonTextAppearance</item>
+        <item>?unknown_ref: 1080004</item>
+        <item>@color/wallet_bright_foreground_holo_dark</item>
+        <item>1</item>
+    </style>
+    <style name="CardView">
+        <item>@color/cardview_light_background</item>
+        <item>@dimen/cardview_default_radius</item>
+        <item>@dimen/cardview_default_elevation</item>
+        <item>@dimen/cardview_default_elevation</item>
+        <item>false</item>
+        <item>true</item>
+    </style>
+    <style name="CardView.Light">
+        <item>@color/cardview_light_background</item>
+    </style>
+    <style name="CardView.Dark">
+        <item>@color/cardview_dark_background</item>
+    </style>
+    <style name="HorizontalSeparator">
+        <item>?attr/separator</item>
+        <item>-1</item>
+        <item>1dp</item>
+    </style>
+    <style name="MainListElement">
+        <item>?attr/backgroundSelector</item>
+        <item>16dp</item>
+        <item>8dp</item>
+        <item>16dp</item>
+        <item>8dp</item>
+        <item>true</item>
+    </style>
+    <style name="MainListElement">
+        <item>?attr/backgroundRippleSelector</item>
+        <item>16dp</item>
+        <item>8dp</item>
+        <item>16dp</item>
+        <item>8dp</item>
+        <item>true</item>
+    </style>
+    <style name="AboutListElement">
+        <item>16dp</item>
+        <item>8dp</item>
+        <item>16dp</item>
+        <item>8dp</item>
+    </style>
+    <style name="CardStyle.Light">
+        <item>11</item>
+        <item>16dp</item>
+        <item>16dp</item>
+        <item>-1</item>
+        <item>-2</item>
+        <item>?attr/cardBackground</item>
+    </style>
+    <style name="CardStyle.Dark">
+        <item>11</item>
+        <item>16dp</item>
+        <item>16dp</item>
+        <item>-1</item>
+        <item>-2</item>
+        <item>?attr/cardBackground</item>
+    </style>
+    <style name="Theme.RagnarDark">
+        <item>@drawable/holo_background_dark</item>
+        <item>@style/ActionBar.Solid.RagnarDark</item>
+        <item>@drawable/ic_about_dark</item>
+        <item>@drawable/ic_settings_dark</item>
+        <item>@drawable/ic_changelog_dark</item>
+        <item>@drawable/ic_download_dark</item>
+        <item>@drawable/ic_addon_dark</item>
+        <item>@drawable/list_selector_holo_dark</item>
+        <item>@color/separator_dark</item>
+        <item>@drawable/ic_web_site_dark</item>
+        <item>@drawable/ic_donate_dark</item>
+        <item>@drawable/ic_check_dark</item>
+        <item>@color/holo_red_dark</item>
+        <item>@color/holo_green_dark</item>
+        <item>@color/holo_blue_light</item>
+        <item>@style/CardStyle.Dark</item>
+        <item>@color/card_background_holo_dark</item>
+        <item>@color/white</item>
+        <item>@color/grey</item>
+        <item>@drawable/pro_ribbon_dark</item>
+    </style>
+    <style name="Theme.RagnarDark">
+        <item>@drawable/material_background_dark</item>
+        <item>true</item>
+        <item>false</item>
+        <item>@color/material_primary</item>
+        <item>@color/material_primary_dark</item>
+        <item>@color/accent_material_dark</item>
+        <item>@drawable/ic_about_dark</item>
+        <item>@drawable/ic_settings_dark</item>
+        <item>@drawable/ic_changelog</item>
+        <item>@drawable/drawable_download</item>
+        <item>@drawable/drawable_addon</item>
+        <item>@color/separator_dark</item>
+        <item>@drawable/drawable_website</item>
+        <item>@drawable/drawable_donate</item>
+        <item>@drawable/drawable_check</item>
+        <item>@color/material_red_500</item>
+        <item>@color/material_light_green_500</item>
+        <item>@style/CardStyle.Dark</item>
+        <item>@color/card_background_material_dark</item>
+        <item>@color/primary_text_material_dark</item>
+        <item>@color/secondary_text_material_dark</item>
+        <item>@drawable/pro_ribbon_dark</item>
+        <item>@color/material_primary</item>
+        <item>@color/material_primary_dark</item>
+        <item>@drawable/ripple_selector_dark</item>
+        <item>@color/accent_material_dark</item>
+    </style>
+    <style name="ActionBar.Solid.RagnarDark">
+        <item>@drawable/ab_solid_holo_dark</item>
+        <item>@drawable/ab_stacked_solid_holo_dark</item>
+        <item>@drawable/ab_bottom_solid_holo_dark</item>
+    </style>
+    <style name="Theme.RagnarDark.Settings">
+    </style>
+    <style name="Theme.RagnarDark.Settings">
+        <item>false</item>
+        <item>true</item>
+    </style>
+    <style name="Theme.RagnarLight">
+        <item>@drawable/holo_background_light</item>
+        <item>@style/ActionBar.Solid.RagnarLight</item>
+        <item>@drawable/ic_about_light</item>
+        <item>@drawable/ic_settings_light</item>
+        <item>@drawable/ic_changelog_light</item>
+        <item>@drawable/ic_download_light</item>
+        <item>@drawable/ic_addon_light</item>
+        <item>@drawable/list_selector_holo_light</item>
+        <item>@color/separator_light</item>
+        <item>@drawable/ic_web_site_light</item>
+        <item>@drawable/ic_donate_light</item>
+        <item>@drawable/ic_check_light</item>
+        <item>@color/holo_red_light</item>
+        <item>@color/holo_green_light</item>
+        <item>@color/holo_blue_dark</item>
+        <item>@style/CardStyle.Light</item>
+        <item>@color/card_background_holo_light</item>
+        <item>@color/black</item>
+        <item>@color/dark_grey</item>
+        <item>@drawable/pro_ribbon_light</item>
+    </style>
+    <style name="Theme.RagnarLight">
+        <item>true</item>
+        <item>false</item>
+        <item>@color/material_primary</item>
+        <item>@color/material_primary_dark</item>
+        <item>@color/accent_material_light</item>
+        <item>@drawable/ic_about_dark</item>
+        <item>@drawable/ic_settings_dark</item>
+        <item>@drawable/ic_changelog</item>
+        <item>@drawable/drawable_download</item>
+        <item>@drawable/drawable_addon</item>
+        <item>@color/separator_light</item>
+        <item>@drawable/drawable_website</item>
+        <item>@drawable/drawable_donate</item>
+        <item>@drawable/drawable_check</item>
+        <item>@color/material_red_500</item>
+        <item>@color/material_light_green_500</item>
+        <item>@style/CardStyle.Light</item>
+        <item>@color/card_background_material_light</item>
+        <item>@color/primary_text_material_light</item>
+        <item>@color/secondary_text_material_light</item>
+        <item>@drawable/pro_ribbon_light</item>
+        <item>@drawable/ripple_selector_light</item>
+        <item>@color/accent_material_light</item>
+    </style>
+    <style name="ActionBar.Solid.RagnarLight">
+        <item>@drawable/ab_solid_holo_light</item>
+        <item>@drawable/ab_stacked_solid_holo_light</item>
+        <item>@drawable/ab_bottom_solid_holo_light</item>
+    </style>
+    <style name="Theme.RagnarLight.Settings">
+    </style>
+    <style name="Theme.RagnarLight.Settings">
+        <item>false</item>
+        <item>true</item>
+    </style>
+    <style name="Theme.RagnarLight.DarkActionBar">
+        <item>@drawable/holo_background_light</item>
+        <item>@style/ActionBar.Solid.RagnarLight.DarkActionBar</item>
+        <item>@drawable/ic_about_dark</item>
+        <item>@drawable/ic_settings_dark</item>
+        <item>@drawable/ic_changelog_dark</item>
+        <item>@drawable/ic_download_light</item>
+        <item>@drawable/ic_addon_light</item>
+        <item>@drawable/list_selector_holo_light</item>
+        <item>@color/separator_light</item>
+        <item>@drawable/ic_web_site_light</item>
+        <item>@drawable/ic_donate_light</item>
+        <item>@drawable/ic_check_light</item>
+        <item>@color/holo_red_light</item>
+        <item>@color/holo_green_light</item>
+        <item>@color/holo_blue_dark</item>
+        <item>@style/CardStyle.Light</item>
+        <item>@color/card_background_holo_light</item>
+        <item>@color/black</item>
+        <item>@color/dark_grey</item>
+        <item>@drawable/pro_ribbon_light</item>
+    </style>
+    <style name="ActionBar.Solid.RagnarLight.DarkActionBar">
+        <item>@drawable/ab_solid_holo_dark</item>
+        <item>@drawable/ab_stacked_solid_holo_dark</item>
+        <item>@drawable/ab_bottom_solid_holo_dark</item>
+    </style>
+    <style name="Theme.RagnarLight.DarkActionBar.Settings">
+    </style>
+</resources>

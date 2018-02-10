@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res-auto" ads:orientation="vertical" ads:layout_width="match_parent" ads:layout_height="match_parent">
+    <Toolbar ads:theme="@style/Theme_RagnarDark" ads:id="@+id/toolbar_main" ads:background="?attr/colorPrimary" ads:layout_width="match_parent" ads:layout_height="UNKNOWN_DATA_0x3801" />
+    <ScrollView ads:scrollbars="vertical" ads:layout_width="match_parent" ads:layout_height="wrap_content">
+        <LinearLayout ads:orientation="vertical" ads:layout_width="match_parent" ads:layout_height="wrap_content">
+            <include layout="@layout/card_update" />
+            <include layout="@layout/card_no_update" />
+            <include layout="@layout/card_addons" />
+            <include layout="@layout/card_website" />
+            <include layout="@layout/card_donate" />
+            <include layout="@layout/card_rom_info" />
+            <include layout="@layout/ad_activity_main" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

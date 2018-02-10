@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <Toolbar android:theme="@style/Theme_RagnarDark" android:id="@+id/toolbar_available_top" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0x3801" android:title="@string/app_name" />
+    <View android:background="@drawable/toolbar_dropshadow" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0xa01" android:layout_below="@+id/toolbar_available_top" />
+    <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="56dp">
+        <TextView android:textSize="28sp" android:id="@+id/tv_available_update_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/available_update_name" />
+        <ProgressBar android:id="@+id/bar_available_progress_bar" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" style="?unknown_attr_ref: 1010078" />
+        <TextView android:textSize="10sp" android:textColor="?attr/textColorSecondary" android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end" android:id="@+id/tv_available_progress_counter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/available_progress_counter" />
+        <TextView android:textSize="10sp" android:textColor="?attr/textColorSecondary" android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end" android:id="@+id/tv_available_md5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/available_md5" />
+        <TextView android:textSize="10sp" android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end" android:id="@+id/tv_available_romhut" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:layout_marginTop="8dp" android:layout_marginBottom="8dp" style="@style/HorizontalSeparator" />
+        <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="56dp">
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="?unknown_attr_ref: 1010042" android:textColor="?attr/textColorSecondary" android:id="@+id/tv_available_changelog_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/available_changelog_content" android:singleLine="false" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <Toolbar android:theme="@style/Theme_RagnarDark" android:id="@+id/toolbar_available_bottom" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="UNKNOWN_DATA_0x3801" android:layout_alignParentBottom="true" android:layout_alignParentStart="true">
+        <include layout="@layout/ota_available_menu" />
+    </Toolbar>
+</RelativeLayout>

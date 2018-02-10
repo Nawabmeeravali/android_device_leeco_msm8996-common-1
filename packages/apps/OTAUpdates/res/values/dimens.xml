@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_default_radius">2dp</dimen>
+    <dimen name="cardview_default_elevation">2dp</dimen>
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+    <dimen name="shadow_height">3dp</dimen>
+    <dimen name="shadow_height">2dp</dimen>
+    <dimen name="card_view_radius">4dp</dimen>
+    <dimen name="card_view_radius">3dp</dimen>
+    <dimen name="preference_item_padding_side">8dp</dimen>
+    <dimen name="preference_item_padding_inner">8dp</dimen>
+    <dimen name="preference_child_padding_side">16dp</dimen>
+    <dimen name="preference_icon_minWidth">0dp</dimen>
+    <dimen name="preference_widget_width">48dp</dimen>
+</resources>

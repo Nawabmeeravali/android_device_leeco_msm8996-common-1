@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res-auto" card_view:cardCornerRadius="@dimen/card_view_radius" card_view:cardElevation="@dimen/shadow_height" card_view:cardUseCompatPadding="true" style="?attr/cardStyle">
+    <LinearLayout card_view:orientation="vertical" card_view:clickable="false" card_view:layout_width="match_parent" card_view:layout_height="wrap_content" style="@style/MainListElement">
+        <TextView card_view:textAppearance="?unknown_attr_ref: 1010040" card_view:textColor="?attr/textColorPrimary" card_view:id="@+id/about_tv_credits_title" card_view:layout_width="wrap_content" card_view:layout_height="wrap_content" card_view:text="@string/about_credits_title" />
+        <TextView card_view:textAppearance="?unknown_attr_ref: 1010042" card_view:textColor="?attr/textColorSecondary" card_view:id="@+id/about_tv_credits_summary" card_view:layout_width="wrap_content" card_view:layout_height="wrap_content" card_view:layout_marginBottom="16dp" card_view:text="@string/about_credits_summary" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
