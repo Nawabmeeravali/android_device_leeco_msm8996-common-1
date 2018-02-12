@@ -117,19 +117,12 @@ on init-cpus
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/up_scale 250
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/idle_mbps 1600
 
-    write /sys/class/devfreq/soc:qcom,memlat-cpu0/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,memlat-cpu2/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,memlat-cpu2/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,mincpubw/governor "cpufreq"
-
 on property:sys.boot_completed=1
     trigger enable-low-power
 
     # update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
-    write /dev/cpuset/foreground/boost/cpus 0-2
-    write /dev/cpuset/foreground/cpus 2-3
+    write /dev/cpuset/foreground/boost/cpus 2-3
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
 
@@ -137,12 +130,6 @@ on property:sys.boot_completed=1
     write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/module/msm_thermal/parameters/enabled Y
     write /sys/kernel/mm/ksm/run 0
-
-    # Enable Adaptive LMK
-    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
-    write /sys/module/lowmemorykiller/parameters/adj "0,58,176,294,411,1000"
-    write /sys/module/lowmemorykiller/parameters/minfree "19352,29028,58056,135464,145140"
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 159375
 
     # VM
     write /proc/sys/vm/dirty_background_ratio 20
