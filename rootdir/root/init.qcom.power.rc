@@ -86,11 +86,8 @@ on init-cpus
     # input boost
     write /sys/module/cpu_boost/parameters/input_boost_enabled 1
     write /sys/module/cpu_boost/parameters/input_boost_ms 1400
-    write /sys/module/cpu_boost/parameters/input_boost_freq "1228800 1324800"
-
-    # Disable touch boost
-    write /sys/module/msm_performance/parameters/touchboost 0
-
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1228800 1:0 2:1324800 3:0"
+    
     # Setting b.L scheduler parameters
     write /proc/sys/kernel/sched_boost 0
     write /proc/sys/kernel/sched_migration_fixup 1
@@ -137,6 +134,8 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/swappiness 5
     write /proc/sys/vm/vfs_cache_pressure 60
 
+    setprop sys.io.scheduler "maple"
+
 on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
@@ -144,7 +143,6 @@ on charger
     write /sys/module/msm_thermal/core_control/cpus_offlined 14
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
-    setprop sys.io.scheduler "maple"
 
 on property:init.svc.recovery=running
     trigger enable-low-power
