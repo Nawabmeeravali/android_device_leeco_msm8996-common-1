@@ -72,66 +72,15 @@ vendor/lib/libstlport.so
 vendor/lib64/libstlport.so
 
 # CNE
-etc/cne/andsfCne.xml
-etc/cne/SwimConfig.xml
-etc/cne/wqeclient/profile1.xml
-etc/cne/wqeclient/profile2.xml
-etc/cne/wqeclient/profile3.xml
-etc/cne/wqeclient/profile4.xml
-etc/cne/wqeclient/profile5.xml
-etc/cne/wqeclient/profile6.xml
-etc/cne/wqeclient/profile7.xml
-etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml
-framework/cneapiclient.jar
-framework/com.quicinc.cne.api-V1.0-java.jar
-framework/com.quicinc.cne.jar
-lib/libvendorconn.so
-lib64/libvendorconn.so
+bin/cnd
 -priv-app/CNEService/CNEService.apk
-vendor/bin/cnd
-vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
-vendor/lib/com.quicinc.cne.api@1.0.so
-vendor/lib/com.quicinc.cne.constants@1.0.so
-vendor/lib/com.quicinc.cne.constants@2.0.so
-vendor/lib/com.quicinc.cne.server@1.0.so
-vendor/lib/com.quicinc.cne.server@2.0.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
-vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
-vendor/lib/libwms.so
-vendor/lib/libwqe.so
 vendor/lib/libxml.so
-vendor/lib64/com.quicinc.cne.api@1.0.so
-vendor/lib64/com.quicinc.cne.constants@1.0.so
-vendor/lib64/com.quicinc.cne.constants@2.0.so
-vendor/lib64/com.quicinc.cne.server@1.0.so
-vendor/lib64/com.quicinc.cne.server@2.0.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneoplookup.so
 vendor/lib64/libcneqmiutils.so
-vendor/lib64/libwms.so
-vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
 # DPM
@@ -229,11 +178,6 @@ vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
 
 # GPS
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml
-etc/permissions/izat.xt.srv.xml
-framework/com.qti.location.sdk.jar
-framework/izat.xt.srv.jar
 lib64/liblocationservice_jni.so
 lib64/libxt_native.so
 lib64/vendor.qti.gnss@1.0.so
@@ -241,7 +185,6 @@ lib64/vendor.qti.gnss@1.0.so
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
-vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
@@ -249,13 +192,11 @@ vendor/etc/cacert_location.pem
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
 vendor/etc/xtra_root_cert.pem
 vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
-vendor/lib64/libalarmservice_jni.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libdrplugin_client.so
 vendor/lib64/libDRPlugin.so
 vendor/lib64/libevent_observer.so
 vendor/lib64/libflp.so
-vendor/lib64/libgdtap.so
 vendor/lib64/libgeofence.so
 vendor/lib64/libizat_client_api.so
 vendor/lib64/libizat_core.so
@@ -263,14 +204,9 @@ vendor/lib64/liblbs_core.so
 -vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/libloc_externalDr.so
-vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/liblowi_client.so
-vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libquipc_os_api.so
 vendor/lib64/libulp2.so
-vendor/lib64/libxtadapter.so
-vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 
 # Graphics - from mata - OPM1.170911.213
@@ -389,6 +325,8 @@ vendor/lib/libvqzip.so
 # Perf
 vendor/bin/energy-awareness
 vendor/bin/msm_irqbalance
+vendor/lib/libqti-perfd-client.so
+vendor/lib64/libqti-perfd-client.so
 
 # Peripheral manager
 vendor/bin/pm-proxy
