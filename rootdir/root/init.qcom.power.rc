@@ -24,6 +24,10 @@ on boot
     write /dev/stune/schedtune.boost 30
     write /dev/stune/schedtune.prefer_idle 1
 
+    # WALT default
+    write /proc/sys/kernel/sched_use_walt_cpu_util 1
+    write /proc/sys/kernel/sched_use_walt_task_util 1
+
     # Set Power HAL tunables
     write /dev/voxpopuli/enable_interaction_boost   1
     write /dev/voxpopuli/fling_min_boost_duration   250
@@ -160,10 +164,6 @@ on init-cpus
     write /proc/sys/kernel/sched_freq_dec_notify 400000
     write /proc/sys/kernel/sched_spill_nr_run 3
     write /proc/sys/kernel/sched_init_task_load 100
-
-    # WALT default
-    write /proc/sys/kernel/sched_use_walt_cpu_util 1
-    write /proc/sys/kernel/sched_use_walt_task_util 1
 
     # Enable bus-dcvs
     write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
