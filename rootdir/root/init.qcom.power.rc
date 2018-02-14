@@ -108,9 +108,6 @@ on init-cpus
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/up_scale 250
     write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/idle_mbps 1600
 
-on property:sys.boot_completed=1
-    trigger enable-low-power
-
     # update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 2-3
@@ -118,14 +115,6 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/cpus 0-2
 
 # Kernel tuning
-    write /sys/kernel/mm/ksm/run 0
-
-    # VM
-    write /proc/sys/vm/dirty_background_ratio 20
-    write /proc/sys/vm/dirty_expire_centisecs 100
-    write /proc/sys/vm/swappiness 5
-    write /proc/sys/vm/vfs_cache_pressure 60
-
     setprop sys.io.scheduler "maple"
 
     # Set thermal restrictions
@@ -141,6 +130,9 @@ on property:sys.boot_completed=1
     write /sys/kernel/msm_thermal/zone8 "729600 729600 65 60"
     write /sys/kernel/msm_thermal/sampling_ms 8000
     write /sys/kernel/msm_thermal/enabled 1
+
+on property:sys.boot_completed=1
+    trigger enable-low-power
 
 on charger
     write /sys/devices/system/cpu/cpu1/online 0

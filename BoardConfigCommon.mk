@@ -23,7 +23,7 @@ BOARD_VENDOR := leeco
 # Include SDCLANG definitions if it is requested and available
 ifeq ($(HOST_OS),linux)
     ifneq ($(wildcard vendor/qcom/sdclang-4.0/),)
-        include vendor/aosip/sdclang/sdclang.mk
+        include vendor/aos/sdclang/sdclang.mk
     endif
 endif
 
