@@ -114,7 +114,7 @@ on init-cpus
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
 
-# Kernel tuning
+    # Kernel tuning
     setprop sys.io.scheduler "maple"
 
     # Set thermal restrictions
@@ -131,8 +131,19 @@ on init-cpus
     write /sys/kernel/msm_thermal/sampling_ms 8000
     write /sys/kernel/msm_thermal/enabled 1
 
+    # Enable Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/adj "0,58,176,294,411,1000"
+    write /sys/module/lowmemorykiller/parameters/minfree "19352,29028,58056,135464,145140"
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 159375
+
 on property:sys.boot_completed=1
     trigger enable-low-power
+    # update cpusets now that boot is complete and we want better load balancing
+    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 2-3
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-2
 
 on charger
     write /sys/devices/system/cpu/cpu1/online 0
