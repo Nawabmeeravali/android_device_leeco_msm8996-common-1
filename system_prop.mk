@@ -2,6 +2,9 @@
 # System Properties for msm8996-common
 #
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.strictmode.disable=true
+
 # system props for the MM modules
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
