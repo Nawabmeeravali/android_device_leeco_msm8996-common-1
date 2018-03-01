@@ -126,6 +126,20 @@ void init_target_properties()
             property_set("persist.radio.multisim.config", "dsds");
             unknownDevice = 0;
         }
+        else if (!strncmp(device.c_str(), "x2_na_oversea", 16)) {
+            // This is LEX829
+            property_override("ro.product.model", "LEX829");
+            // Dual SIM
+            property_set("persist.radio.multisim.config", "dsds");
+            unknownDevice = 0;
+        }
+        else if (!strncmp(device.c_str(), "x2", 5)) {
+            // This is LEX829
+            property_override("ro.product.model", "LEX829");
+            // Dual SIM
+            property_set("persist.radio.multisim.config", "dsds");
+            unknownDevice = 0;
+        }
         else if (!strncmp(device.c_str(), "le_x2", 5)) {
             // This is LEX820
             property_override("ro.product.model", "LEX820");

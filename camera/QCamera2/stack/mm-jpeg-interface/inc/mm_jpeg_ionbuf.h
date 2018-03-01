@@ -31,7 +31,7 @@
 #define __MM_JPEG_IONBUF_H__
 
 // System dependencies
-#include <linux/msm_ion.h>
+#include <../../hardware/qcom/msm8996/kernel-headers/linux/msm_ion.h>
 
 // JPEG dependencies
 #include "mm_jpeg_dbg.h"

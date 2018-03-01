@@ -32,7 +32,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
-#include <linux/msm_ion.h>
+#include <../../hardware/qcom/msm8996/kernel-headers/linux/msm_ion.h>
 #define MMAN_H <SYSTEM_HEADER_PREFIX/mman.h>
 #include MMAN_H
 

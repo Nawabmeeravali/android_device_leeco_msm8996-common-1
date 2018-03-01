@@ -32,8 +32,8 @@
 
 // System dependencies
 #include <pthread.h>
-#include <linux/msm_ion.h>
-#include <linux/msm_mdp.h>
+#include <../../hardware/qcom/msm8996/kernel-headers/linux/msm_ion.h>
+#include <../../hardware/qcom/msm8996/kernel-headers/linux/msm_mdp.h>
 
 // Camera dependencies
 #include "mm_camera_interface.h"

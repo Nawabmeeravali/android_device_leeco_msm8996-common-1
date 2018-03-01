@@ -34,7 +34,7 @@
 #include <utils/List.h>
 #include <utils/Mutex.h>
 #include <utils/Vector.h>
-#include "gralloc_priv.h"
+#include "../../hardware/qcom/display/msm8996/libgralloc/gralloc_priv.h"
 
 // Camera dependencies
 #include "cam_intf.h"

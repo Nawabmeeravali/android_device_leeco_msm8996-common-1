@@ -30,8 +30,7 @@
 #define LOG_TAG "QCamera3StreamMem"
 
 // System dependencies
-#include "gralloc_priv.h"
-
+#include <../../hardware/qcom/display-caf-msm8996/libgralloc/gralloc_priv.h>
 // Camera dependencies
 #include "QCamera3StreamMem.h"
 
