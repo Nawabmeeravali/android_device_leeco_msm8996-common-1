@@ -106,7 +106,7 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,memlat-cpu2/polling_interval 10
     write /sys/class/devfreq/soc:qcom,mincpubw/governor "cpufreq"
 
-    setprop sys.io.scheduler "maple"
+    setprop sys.io.scheduler "noop"
 
     # VM
     write /proc/sys/vm/dirty_background_ratio 20
